@@ -1,0 +1,122 @@
+= i2cgui Flatpak
+Jordan Williams <jordan@jwillikers.com>
+:experimental:
+:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:fish: https://fishshell.com/[fish]
+:Flatpak: https://www.flatpak.org/[Flatpak]
+:Git: https://git-scm.com/[Git]
+:i2cdriver: https://i2cdriver.readthedocs.io/en/latest/[i2cdriver]
+:Flatpak-Pip-Generator: https://github.com/flatpak/flatpak-builder-tools/tree/master/pip[Flatpak Pip Generator]
+
+A {Flatpak} manifest for packaging the {i2cdriver} GUI as a Flatpak application.
+
+== Getting Started
+
+The instructions below can be used on Fedora to create the image and run it locally.
+
+. Install `flatpak-builder`, {Git}, and Python.
++
+[source,sh]
+----
+➜ sudo dnf -y install flatpak-builder git python3
+----
+
+. Install the Freedesktop Platform and SDK Flatpaks.
++
+[source,sh]
+----
+➜ sudo flatpak -y install flathub org.freedesktop.Platform//20.08 org.freedesktop.Sdk//20.08
+----
+
+. Clone this repository.
++
+[source,sh]
+----
+➜ git clone --recursive https://github.com/jwillikers/i2cgui-flatpak.git
+----
+
+. Change into the project directory.
++
+[source,sh]
+----
+➜ cd i2cgui-flatpak
+----
+
+. Install the `requirements-parser` Python package.
++
+[source,sh]
+----
+➜ python3 -m pip install --user requirements-parser
+----
+
+. If necessary, update the Python dependencies using the {flatpak-pip-generator} script.
++
+[source,sh]
+----
+➜ python3 flatpak-builder-tools/pip/flatpak-pip-generator i2cdriver wxpython
+----
+
+. Build the Flatpak.
++
+[source,sh]
+----
+➜ flatpak-builder build-dir com.i2cdriver.i2cgui.yml
+----
+
+. Install it locally for the user.
++
+[source,sh]
+----
+➜ flatpak-builder --user --install user-build-dir com.i2cdriver.i2cgui.yml
+----
+
+. Now just run the Flatpak.
++
+[source,sh]
+----
+➜ flatpak run com.i2cdriver.i2cgui
+----
+
+== Todo
+
+- [ ] Create a desktop file.
+- [ ] Create a container for building the Flatpak.
+- [ ] Publish on Flathub?
+
+== Contributing
+
+Contributions in the form of issues, feedback, and even pull requests are welcome.
+Make sure to adhere to the project's link:CODE_OF_CONDUCT.adoc[Code of Conduct].
+
+== Open Source Software
+
+This project is built on the hard work of countless open source contributors.
+Several of these projects are enumerated below.
+
+* https://asciidoctor.org/[Asciidoctor]
+* {Flatpak}
+* {Flatpak-Pip-Generator}
+* {Git}
+* {i2cdriver}
+* https://www.linuxfoundation.org/[Linux]
+
+== Code of Conduct
+
+The project's Code of Conduct is available in the link:CODE_OF_CONDUCT.adoc[Code of Conduct] file.
+
+== License
+
+This repository is licensed under the https://www.gnu.org/licenses/gpl-3.0.html[GPLv3], available in the link:LICENSE.adoc[license file].
+
+© 2021 Jordan Williams
+
+== Authors
+
+mailto:{email}[{author}]

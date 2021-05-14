@@ -1,0 +1,14 @@
+app-id: com.i2cdriver.i2cgui
+branch: stable
+runtime: org.freedesktop.Platform
+runtime-version: '20.08'
+sdk: org.freedesktop.Sdk
+command: i2cgui.py
+
+finish-args:
+  - "--device=all"
+  - "--share=ipc"
+  - "--socket=x11"
+
+modules:
+  - python3-modules.json
