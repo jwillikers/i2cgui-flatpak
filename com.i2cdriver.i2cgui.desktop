@@ -2,7 +2,10 @@
 Type=Application
 Name=i2cgui
 Comment=An easy-to-use, open source tool for controlling I²C devices over USB
-Exec=com.i2cdriver.i2cgui
+Exec=i2cgui.py
 Icon=com.i2cdriver.i2cgui
-Categories=Development;IDE;Electronics;
+Terminal=false
+Categories=Development;Electronics;
 Keywords=electronics;embedded;i2c;microcontroller;
+StartupWMClass=i2cgui
+StartupNotify=true
