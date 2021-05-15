@@ -67,14 +67,14 @@ The instructions below can be used on Fedora to create the image and run it loca
 +
 [source,sh]
 ----
-➜ flatpak-builder build-dir com.i2cdriver.i2cgui.yml
+➜ flatpak-builder --force-clean build-dir com.i2cdriver.i2cgui.yml
 ----
 
 . Install it locally for the user.
 +
 [source,sh]
 ----
-➜ flatpak-builder --user --install user-build-dir com.i2cdriver.i2cgui.yml
+➜ flatpak-builder --force-clean --user --install user-build-dir com.i2cdriver.i2cgui.yml
 ----
 
 . Now just run the Flatpak.
