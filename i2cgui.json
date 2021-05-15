@@ -1,0 +1,31 @@
+{
+    "name": "i2cgui",
+    "buildsystem": "simple",
+    "build-commands": [
+        "install apply_extra /app/bin",
+        "install -Dm644 --target-directory=/app/share/applications com.i2cdriver.i2cgui.desktop",
+        "install -Dm644 --target-directory=/app/share/icons/hicolor/256x256/apps com.i2cdriver.i2cgui.png"
+    ],
+    "sources": [
+        {
+            "type": "script",
+            "dest-filename": "apply_extra",
+            "commands": [
+                "mkdir -p /app/export/share/icons/hicolor/256x256/apps",
+                "cp /app/share/icons/hicolor/256x256/apps/com.i2cdriver.i2cgui.png /app/export/share/icons/hicolor/256x256/apps",
+                "mkdir -p /app/export/share/applications",
+                "cp /app/share/applications/com.i2cdriver.i2cgui.desktop /app/export/share/applications"
+            ]
+        },
+        {
+            "type": "file",
+            "path": "com.i2cdriver.i2cgui.desktop"
+        },
+        {
+            "type": "file",
+            "url": "https://raw.githubusercontent.com/jamesbowman/i2cdriver/master/images/i2cdriver.png",
+            "sha256": "0bbcad07e3e59376f4aa6485ec5bdec58ef67943e048937e7a7eb591c7933b88",
+            "dest-filename": "com.i2cdriver.i2cgui.png"
+        }
+    ]
+}

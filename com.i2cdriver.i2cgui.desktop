@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=i2cgui
+Comment=An easy-to-use, open source tool for controlling I²C devices over USB
+Exec=com.i2cdriver.i2cgui
+Icon=com.i2cdriver.i2cgui
+Categories=Development;IDE;Electronics;
+Keywords=electronics;embedded;i2c;microcontroller;

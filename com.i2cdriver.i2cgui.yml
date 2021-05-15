@@ -12,3 +12,4 @@ finish-args:
 
 modules:
   - python3-modules.json
+  - i2cgui.json

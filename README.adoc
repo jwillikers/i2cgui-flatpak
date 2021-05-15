@@ -86,7 +86,8 @@ The instructions below can be used on Fedora to create the image and run it loca
 
 == Todo
 
-- [ ] Create a desktop file.
+- [ ] Cleanup unneeded files.
+- [ ] Create an AppData XML file.
 - [ ] Create a container for building the Flatpak.
 - [ ] Publish on Flathub?
 
